@@ -63,15 +63,6 @@ textarea {
     text-align: center;
 }
 
-.hringur {
-    display: flex;
-    align-items: center;
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 37px;
-}
 
 table th {
     text-transform: uppercase;
@@ -255,7 +246,7 @@ nav {
     }
     
     .nav a {
-        border: 1px solid red;
+        border: 2px solid var(--daniel2);
         margin: 10px;
         padding: 10px;
         line-height: 10px;
