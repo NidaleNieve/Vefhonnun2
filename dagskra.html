@@ -45,13 +45,11 @@
         }
     </script>
     <div class="slideshow">
-        <img class="slide" src="photos/slide1.webp">
-        <img class="slide" src="photos/slide2.webp">
-        <img class="slide" src="photos/slide3.webp">
+        <img class="mynd" src="photos/dagskra-header.webp">
         <div class="overlay">
             <img src="photos/logo.svg" class="logomynd">
-            <h1>Nýsköpunarráðestefan 2024</h1>
-            <p>Hér getur þú lesið um viðburðinn og keypt miða</p>
+            <h1>Dagskrá</h1>
+            <p>Hér getur þú séð dagskránna okkar og keypt miða</p>
         </div>
     </div>
     <script>
@@ -70,34 +68,70 @@
           setTimeout(carousel, 9000);    
         }
     </script>
-
-    <div class="dagskra width90">
-        <div class="texti mobile">
-            <h1>Dagskrá</h1>
-            <p>Farðu í klikkað ferðalag í gegnum hjarta nýsköpunar með vandlega útbúinni dagskrá okkar. Allt frá kynningum til vinnustofa og sýndarveruleika ferðalög , hvert augnablik er mótað til að kveikja innblástur og hafa gaman. Upplifðu framtíðina, bás á bás. Fyrir nákvæmari dagskrá, <a href="dagskra.html">smelltu hér</a> eða á takkan hér fyrir neðan</p>
-            <a class="takki" href="dagskra.html">Dagskrá</a>
-        </div>
-        <img src="photos/dagskra.webp">
-        <div class="texti desktop">
-            <h1>Dagskrá</h1>
-            <p>Farðu í klikkað ferðalag í gegnum hjarta nýsköpunar með vandlega útbúinni dagskrá okkar. Allt frá kynningum til vinnustofa og sýndarveruleika ferðalög , hvert augnablik er mótað til að kveikja innblástur og hafa gaman. Upplifðu framtíðina, bás á bás. Fyrir nákvæmari dagskrá, <a href="dagskra.html">smelltu hér</a> eða á takkan hér fyrir neðan</p>
-            <a class="takki" href="dagskra.html">Dagskrá</a>
-        </div>
-    </div>
-    <div class="info width90">
-        <div class="texti mobile">
-            <h1>Upplýsingar</h1>
-            <p>Undirbúðu þig fyrir einstaka upplifun í Nýsköpunarráðstefnu 2024. Hér finnur þú nauðsynlegar upplýsingar til að gera heimsókn þína skemmtilega og hagstæða. Frá upplýsingum um staðsetningu og miðasölu til valkosta fyrir gistingu og hvernig þú getur hámarkað upplifun þína á ráðstefnunni, við höfum allt sem þú þarft. Kafaðu í smáatriðin með því að <a href="info.html">ýta hér</a> eða smella á hnappin hér fyrir neðan.</p>
-            <a class="takki" href="info.html">Upplýsingar</a>
-        </div>
-        <img src="photos/info.webp">
-        <div class="texti desktop">
-            <h1>Upplýsingar</h1>
-            <p>Undirbúðu þig fyrir einstaka upplifun í Nýsköpunarráðstefnu 2024. Hér finnur þú nauðsynlegar upplýsingar til að gera heimsókn þína skemmtilega og hagstæða. Frá upplýsingum um staðsetningu og miðasölu til valkosta fyrir gistingu og hvernig þú getur hámarkað upplifun þína á ráðstefnunni, við höfum allt sem þú þarft. Kafaðu í smáatriðin með því að <a href="info.html">ýta hér</a> eða smella á hnappin hér fyrir neðan.</p>
-            <a class="takki" href="info.html">Upplýsingar</a>
-        </div>
-    </div>
-
+    <div class="table-responsive">
+    <table class="width90">
+        <caption>Dagskrá</caption>
+        <thead>
+            <tr>
+                <th scope="col">‎</th>
+                <th scope="col">9:00 - 10:00</th>
+                <th scope="col">10:00 - 11:00</th>
+                <th scope="col">11:15 - 12:15</th>
+                <th scope="col">12:15 - 13:30</th>
+                <th scope="col">13:30 - 14:30</th>
+                <th scope="col">14:45 - 15:45</th>
+                <th scope="col">16:00 - 17:00</th>
+                <th scope="col">17:00 - 19:00</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="chapters">Dagur 1 - Aðalviðburður</th>
+                <td hata-tables="9:00 - 10:00">Skráning & Morgunkaffi</td>
+                <td hata-tables="10:00 - 11:00">Ræða: "Framtíð tækninnar og sjálfbærni" eftir Dr. Ada Lovelace</td>
+                <td hata-tables="11:15 - 12:15">Pallborðsumræða: "Gervigreind og vélarnám - Umbreyting iðnaðarins"</td>
+                <td hata-tables="12:15 - 13:30">Hádegisverður</td>
+                <td hata-tables="13:30 - 14:30">Vinnustofa C: "Byggja snjallbæi með IoT"</td>
+                <td hata-tables="14:45 - 15:45">Smiðja: "Blockchain fyrir betri heim"</td>
+                <td hata-tables="16:00 - 17:00">Netvinnsla & Sýningarsalur</td>
+                <td hata-tables="17:00 - 19:00">Velkomudrykkur & Veggspjaldasýning</td>
+            </tr>
+            <tr>
+                <th class="chapters">Dagur 1 - Aukaviðburður</th>
+                <td hata-tables="9:00 - 10:00">‎ </td>
+                <td hata-tables="10:00 - 11:00">Vinnustofa A: "Inngangur að Blockchain"</td>
+                <td hata-tables="11:15 - 12:15">Vinnustofa B: "Heimur Quantum tölvunar"</td>
+                <td hata-tables="12:15 - 13:30">‎ </td>
+                <td hata-tables="13:30 - 14:30">Vinnustofa D: "Nýsköpun í endurnýjanlegri orku"</td>
+                <td hata-tables="14:45 - 15:45">Málstofa: "Áskoranir í gervigreind"</td>
+                <td hata-tables="16:00 - 17:00">‎ </td>
+                <td hata-tables="17:00 - 19:00">‎ </td>
+            </tr>
+            <tr>
+                <th class="chapters">Dagur 2 - Aðalviðburður</th>
+                <td hata-tables="9:00 - 10:00">Kaffi & Netvinnsla</td>
+                <td hata-tables="10:00 - 11:00">Aðalræða: "Nýsköpun fyrir heilsu" eftir Dr. Hiro Tanaka</td>
+                <td hata-tables="11:15 - 12:15">Pallborðsumræða: "Sjálfbærni í tækni: Aðferðir fyrir grænna á morgun"</td>
+                <td hata-tables="12:15 - 13:30">Hádegisverður</td>
+                <td hata-tables="13:30 - 14:30">Vinnustofa G: "VR og AR í menntun: Næsta landamæri"</td>
+                <td hata-tables="14:45 - 15:45">Vinnustofa H: "Öryggi í aldri IoT"</td>
+                <td hata-tables="16:00 - 17:00">Lokaræða: "Leiðin fram á við: Tækni og mannkyn" eftir Elise McKenna</td>
+                <td hata-tables="17:00 - 19:00">Lokaorð & Kveðja</td>
+            </tr>
+            <tr>
+            <th class="chapters">Dagur 2 - Aukaviðburður</th>
+            <td hata-tables="9:00 - 10:00">‎ </td>
+            <td hata-tables="10:00 - 11:00">Vinnustofa E: "Tækni í sjálfbærri matvælaframleiðslu"</td>
+            <td hata-tables="11:15 - 12:15">Vinnustofa F: "Framtíð VR og AR í námi"</td>
+            <td hata-tables="12:15 - 13:30">‎ </td>
+            <td hata-tables="13:30 - 14:30">Málstofa: "Öryggi og einkalíf í IoT"</td>
+            <td hata-tables="14:45 - 15:45">Vinnustofa I: "Valdefling startups í gegnum stafræna umbreytingu"</td>
+            <td hata-tables="16:00 - 17:00">Opin umræða: "Tækni og samfélagið"</td>
+            <td hata-tables="17:00 - 19:00">‎ </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
     <footer>
         <nav>
           <ul class="font">

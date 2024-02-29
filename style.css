@@ -1,56 +1,476 @@
-@font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?bl7hin');
-  src:  url('fonts/icomoon.eot?bl7hin#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?bl7hin') format('truetype'),
-    url('fonts/icomoon.woff?bl7hin') format('woff'),
-    url('fonts/icomoon.svg?bl7hin#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+:root {
+
+	--font1: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font2: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace;
+
+	/* Light theme */
+	--texti1: #000000;
+    --bakgrunnur: #ffffff;
+	--litur1: #0366d6;
+	--litur2: #4890e1;
+	--litur3: #7bb0ec;
+
+	/* Dark theme */
+	--darkTexti1: #ffffff;
+    --darkBakgrunnur: #000000;
+	--dark1: #0f3765;
+	--dark2: #0f4784;
+	--dark3: #2065b5;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@media (prefers-color-scheme: dark) {
+	:root {
+		--texti1: var(--darkTexti1);
+		--bakgrunnur: var(--darkBakgrunnur);
+		--litur1: var(--dark1);
+		--litur2: var(--dark2);
+		--litur3: var(--dark3);
+	}
 }
 
-.icon-peace:before {
-  content: "\e900";
+body {
+    background-color: var(--bakgrunnur);
+    color: var(--texti1);
+    font-family: var(--font1);
 }
-.icon-cart:before {
-  content: "\e93a";
+
+.width90 {
+    max-width: 90%;
+    padding: 2rem;
+    margin: 0 auto
 }
-.icon-mobile:before {
-  content: "\e958";
+
+.nav .takkinn {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 100000;
+    font-size: 50px;
 }
-.icon-key:before {
-  content: "\e98d";
+
+.nav a {
+    display: block;
+    text-decoration: none;
+    padding: 30px 20px;
+    background-color: var(--litur2);
+    color: var(--texti1);
+    text-align: center;
+    font-weight: bold;
 }
-.icon-menu:before {
-  content: "\e9bd";
+
+.nav .content {
+    display: none;
+    position: fixed;
+    right: 10px;
+    top: 83px;
+    min-width: 104px;
+    z-index: 100000;
 }
-.icon-twitter:before {
-  content: "\ea96";
+
+.nav:hover .content {
+    display: block;
 }
-.icon-youtube:before {
-  content: "\ea9d";
+
+.nav:hover button .icon-logo-color {
+    transform: scale(1.3);
 }
-.icon-steam2:before {
-  content: "\eaad";
+
+button .icon-logo-color {
+    display: inline-block; 
+    transition: transform 0.5s ease; 
 }
-.icon-github:before {
-  content: "\eab0";
+
+.icon-logo {
+    font-size: 25px;
+    color: white;
 }
-.icon-wordpress:before {
-  content: "\eab4";
+
+.nav .innskraning {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    overflow: visible;
+    padding: 0;
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the popup */
+    z-index: 500;
+}
+
+.form-popup {
+    max-width: 250px;
+    padding: 10px;
+    background-color: var(--litur1);
+    border: 2px solid var(--litur3);
+}
+
+.form-popup .input {
+    width: 220px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: var(--litur2);
+}
+
+.form-popup label {
+    font-size: 20px;
+}
+
+.form-popup .btn {
+    background-color: var(--litur2);
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+}
+
+.slideshow .mynd {
+    width: 100%;
+    height: auto;
+}
+
+.infomiddle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+}
+
+.slide {
+    animation:fading 10s infinite;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay p, .overlay h1 {
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay h1 {
+    font-size: 20px;
+}
+
+.logomynd {
+    max-width: 40%;
+    height: auto;
+}
+
+.dagskra, .info {
+    display: grid;
+}
+
+.dagskra .desktop, .info .desktop {
+    display: none;
+}
+
+.dagskra .mobile, .info .mobile {
+    display: grid;
+}
+
+.dagskra h1, .info h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.dagskra p, .info p{
+    line-height: 35px;
+    font-size: 25px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.dagskra .takki, .info .takki{
+    border: 1px solid var(--litur3);
+    margin: auto;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10%;
+    background-color: var(--litur1);
+    color: var(--texti1);
+}
+
+.dagskra .takki:visited, .info .takki:visited{
+    color: var(--texti1);
+}
+
+.dagskra img, .info img{
+    max-width: 90%;
+    height: auto;
+    padding: 20px;
+    border-radius: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table th {
+    text-transform: uppercase;
+}
+
+table th,
+table td {
+    text-align: center;
+}
+
+table {
+    background: var(--litur1);
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%
+}
+
+table caption {
+	font-weight: bold;
+	margin-bottom: .5rem;
+    font-size: 30px;
+}
+
+td,
+th {
+	border: 1px solid var(--bakgrunnur);
+	text-align: left;
+    padding: 1vw;
+    font-size: 1vw; 
+}
+
+th {
+	background: var(--litur2);
+}
+
+tr {
+	background: var(--litur3);
+}
+
+tr:nth-child(even) {
+	background: var(--litur2);
+}
+
+footer {
+    display: grid;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+
+@keyframes fading {
+    0% {opacity:0}
+    50% {opacity:1}
+    100% {opacity:0}
+}
+
+@media screen and (min-width:768px) {
+    .nav .takkinn {
+        width: 70px;
+        height: 70px;
+        position: fixed;
+        top: 10px;
+        z-index: 100000; /* milljón skrilljón billjón*/
+        display: none;
+    }
+    
+    .nav a {
+        margin: 10px;
+        padding: 10px;
+        line-height: 10px;
+        width: 100px;
+        height: 10px;
+        flex-grow: 1;
+        border: 1px solid var(--litur3);
+    }
+
+    .nav .content {        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border: none;
+        top: 1px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        width: 90%;
+        position: fixed;
+        top: 5px;
+
+    }
+    
+    .nav:hover .content {
+        display: flex;
+    }
+
+    .nav .icon-home,
+    .nav .icon-info,
+    .nav .icon-calendar,
+    .nav .icon-user {
+        display: none;
+    }
+
+    @keyframes floatDown {
+        from {
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .nav .content .floatUp1 {   
+        transform: translateY(-200%);
+        animation: floatDown 2.5s ease-out forwards;
+        animation-delay: 1s;
+    }
+
+    .nav .content .floatUp2 {   
+        transform: translateY(-200%);
+        animation: floatDown 2.5s ease-out forwards;
+        animation-delay: 1.3s;
+    }
+
+    .nav .content .floatUp3 {   
+        transform: translateY(-200%);
+        animation: floatDown 2.5s ease-out forwards;
+        animation-delay: 1.6s;
+    }
+
+    .nav .content .floatUp4 {   
+        transform: translateY(-200%);
+        animation: floatDown 2.5s ease-out forwards;
+        animation-delay: 1.9s;
+        cursor: pointer;
+    }
+
+    .logomynd {
+        max-width: 30%;
+        height: auto;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: auto;
+    }
+
+    .overlay h1, .overlay p {
+        margin-left: 50px;
+        margin-right: auto;
+    }
+
+    .dagskra {
+        grid-template-columns: 1fr 1.5fr;
+    }
+
+    .info {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    .dagskra .desktop, .info .mobile {
+        display: grid;
+    }
+
+    .dagskra .mobile, .info .desktop {
+        display: none;
+    }
+
+    .dagskra p, .info p{
+        max-width: 70%;
+    }
+
+    .dagskra img, .info img{
+        max-width: 100%;
+        padding-top: 20px;
+        border-radius: 10%;
+    }
+    
+    footer {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    nav .btn {
+        width: 100px;
+        height: 20px;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        content: attr(hata-tables);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    th, td {
+        padding: 2vw;
+        font-size: 2vw;
+    }
 }
